@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.abhay.example</groupId>
 	<artifactId>devsecops</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>devsecops</name>
 	<description>DevSecOps Demo project for Spring Boot</description>
