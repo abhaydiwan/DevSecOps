@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.abhay.example</groupId>
 	<artifactId>devsecops</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>war</packaging>
 	<name>devsecops</name>
 	<description>DevSecOps Demo project for Spring Boot</description>
@@ -40,7 +40,7 @@
 		<connection>scm:git:git@github.com:abhaydiwan/DevSecOps.git</connection>
 		<developerConnection>scm:git:git@github.com:abhaydiwan/DevSecOps.git</developerConnection>
 		<url>git@github.com:abhaydiwan/DevSecOps.git</url>
-		<tag>HEAD</tag>
+		<tag>v0.0.2</tag>
 	</scm>
 
 
