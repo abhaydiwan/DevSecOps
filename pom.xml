@@ -19,7 +19,13 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-      
+      <distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>DIWANABH-E756-snapshots</name>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
 
 	<dependencies>
 		<dependency>
