@@ -10,11 +10,7 @@
 	</parent>
 	<groupId>com.abhay.example</groupId>
 	<artifactId>devsecops</artifactId>
-<<<<<<< HEAD
-	<version>1.0.0-SNAPSHOT</version>
-=======
-	<version>0.0.6-SNAPSHOT</version>
->>>>>>> initial_release
+	<version>0.0.7-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>devsecops</name>
 	<description>DevSecOps Demo project for Spring Boot</description>
