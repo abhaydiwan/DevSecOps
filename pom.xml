@@ -10,7 +10,11 @@
 	</parent>
 	<groupId>com.abhay.example</groupId>
 	<artifactId>devsecops</artifactId>
+<<<<<<< HEAD
 	<version>1.0.0-SNAPSHOT</version>
+=======
+	<version>0.0.6-SNAPSHOT</version>
+>>>>>>> initial_release
 	<packaging>war</packaging>
 	<name>devsecops</name>
 	<description>DevSecOps Demo project for Spring Boot</description>
@@ -19,6 +23,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<!-- Properties for pom.xml: -->
+		<surefire.version>2.17</surefire.version>
+		<jacoco.version>0.7.9</jacoco.version>
 	</properties>
 
 	<distributionManagement>
@@ -41,7 +48,7 @@
 		<connection>scm:git:git@github.com:abhaydiwan/DevSecOps.git</connection>
 		<developerConnection>scm:git:git@github.com:abhaydiwan/DevSecOps.git</developerConnection>
 		<url>git@github.com:abhaydiwan/DevSecOps.git</url>
-		<tag>HEAD</tag>
+		<tag>v0.0.2</tag>
 	</scm>
 
 
@@ -74,22 +81,52 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-					<autoVersionSubmodules>true </autoVersionSubmodules>
-				</configuration>
-			</plugin>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
+						<autoVersionSubmodules>true </autoVersionSubmodules>
+					</configuration>
+				</plugin>
 
-		</plugins>
+				<!-- Sonar plugins starts here -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${surefire.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco.version}</version>
+					<executions>
+						<execution>
+							<id>default-prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>default-report</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Sonar plugins ends here -->
+			</plugins>
+		</pluginManagement>
 	</build>
 
 </project>
