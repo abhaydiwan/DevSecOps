@@ -35,12 +35,12 @@ node {
    }
    stage('Deploy') {
       
-       bat("move target\*.war target\devsecops.war")
-       bat("cd target")
+       bat(/"move target\*.war target\devsecops.war"/)
+       bat(/"cd target"/)
            
-       bat("curl -u abhay:abhay -T devsecops.war 'http://localhost:8080/manager/text/deploy?path=/devops&update=true'")
+       bat(/"curl -u abhay:abhay -T devsecops.war 'http://localhost:8080/manager/text/deploy?path=/devops&update=true'"/)
    }
    stage("Smoke Test"){
-       bat("curl --retry-delay 10 --retry 5 'http://localhost:8080/devops'")
+       bat(/"curl --retry-delay 10 --retry 5 'http://localhost:8080/devops'"/)
    }
 }
