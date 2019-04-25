@@ -35,11 +35,8 @@ node {
    }
    stage('Deploy') {
       
-       bat(/"move target\*.war target\devsecops.war"/)
-       bat(/"cd target"/)
-       bat(/set url =%http://localhost:8080/manager/text/deploy?path=/devops&update=true%/)
-           
-       bat(/"curl -u abhay:abhay -T devsecops.war %url%"/)
+       bat(/"move target\*.war target\dev.war"/)
+       bat(/"upload.bat"/)
    }
    stage("Smoke Test"){
        bat(/set url1 =%http://localhost\:8080/devops%/)
