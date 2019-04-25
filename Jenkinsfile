@@ -1,8 +1,12 @@
 node {
    def mvnHome
+   def jdk
    stage('Prepare') {
       git url: 'git@github.com:abhaydiwan/DevSecOps.git', branch: 'jenkinsfile_setup'
       mvnHome = tool 'Maven'
+      jdk = tool name: 'Java', type: 'jdk'
+      env.JAVA_HOME = "${jdk}"
+   
    }
    stage('Build') {
       if (isUnix()) {
