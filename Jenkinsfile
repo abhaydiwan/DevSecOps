@@ -37,12 +37,12 @@ node {
       
        bat(/"move target\*.war target\devsecops.war"/)
        bat(/"cd target"/)
-       bat(/set url ="http://localhost:8080/manager/text/deploy?path=/devops&update=true"/)
+       bat(/set url ="http://localhost\:8080/manager/text/deploy?path=/devops&update=true"/)
            
        bat(/"curl -u abhay:abhay -T devsecops.war %url%"/)
    }
    stage("Smoke Test"){
-       bat(/set url1 ="http://localhost:8080/devops"/)
+       bat(/set url1 ="http://localhost\:8080/devops"/)
       
        bat(/"curl --retry-delay 10 --retry 5 %url1%"/)
    }
