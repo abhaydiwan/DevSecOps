@@ -34,9 +34,7 @@ node {
       }
    }
    stage('Deploy') {
-      
-       bat(/"move target\*.war target\dev.war"/)
-       bat(/"upload.bat"/)
+      bat(/"upload.bat"/)
    }
    stage("Smoke Test"){
        //bat(/set url1 =%http://localhost\:8080/devops%/)
