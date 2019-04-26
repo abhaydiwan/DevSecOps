@@ -37,7 +37,6 @@ node {
       bat(/"upload.bat"/)
    }
    stage("Smoke Test"){
-       //bat(/set url1 =%http://localhost\:8080/devops%/)
-       //bat(/"curl --retry-delay 10 --retry 5 %url1%"/)
+      bat(/"smoke.bat"/)
    }
 }
